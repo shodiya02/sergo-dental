@@ -12,8 +12,8 @@ function photoFor(desc){
   if(!photoEnabled()) return null;
   var d=(desc||'').toLowerCase();
   if(d.indexOf('\u043c\u043e\u043d\u0442\u0430\u0436\u043d\u0430\u044f \u043f\u043b\u0430\u0441\u0442\u0438\u043d\u0430')>=0) return 'blank';
-  if(d.indexOf('\u043a\u0440\u0435\u0441\u043b\u043e stern 380 p')>=0) return 'assets/images/image_2026-08-15_16-12-42.png';
-  if(d.indexOf('\u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u0430\u044f \u043e\u0431\u0438\u0432\u043a\u0430')>=0&&d.indexOf('\u043a\u0440\u0435\u0441\u043b\u0430')>=0) return 'assets/images/image_2026-08-15_16-16-25.png';
+  if(d.indexOf('\u043a\u0440\u0435\u0441\u043b\u043e stern 380 p')>=0) return 'assets/images/image_2026-08-15_16-55-33.png';
+  if(d.indexOf('\u043e\u0431\u0438\u0432\u043a\u0430 \u043a\u0440\u0435\u0441\u043b\u0430')>=0&&d.indexOf('memory foam')<0) return 'assets/images/image_2026-08-15_16-56-28.png';
   if(d.indexOf('\u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442 \u043e\u0431\u0438\u0432\u043a\u0438')>=0&&d.indexOf('memory foam')<0&&
     (d.indexOf('\u043c\u043e\u0434\u0435\u043b\u0438 7')>=0||d.indexOf('\u043c\u043e\u0434\u0435\u043b\u0438 8')>=0||
       d.indexOf('\u043c\u043e\u0434\u0435\u043b\u0438 9')>=0)) {
@@ -34,7 +34,7 @@ function photoFor(desc){
   if(d.indexOf('\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0441\u0442\u043e\u043b\u0430 \u0432\u0440\u0430\u0447\u0430 \u043f\u043e\u0434 \u0434\u0430\u0442\u0447\u0438\u043a')>=0) return 'blank';
   if(d.indexOf('\u043c\u0443\u043b\u044c\u0442\u0438\u043c\u0435\u0434\u0438\u0439\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c \u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u0438 \u0434\u0430\u0442\u0447\u0438\u043a\u0430 zen-x')>=0) return 'blank';
   if(d.indexOf('rx dc hypersphere')>=0) return 'assets/images/image_2026-08-13_14-26-05.png';
-  if(d.indexOf('zen-x')>=0) return 'assets/images/image_2026-08-13_14-31-23.png';
+  if(d.indexOf('внутриротовой датчик')>=0&&d.indexOf('zen-x')>=0) return 'assets/images/image_2026-08-13_14-31-23.png';
   if(d.indexOf('i-xs4')>=0&&d.indexOf('fluo')>=0&&d.indexOf('детекция')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
   if(d.indexOf('кресло stern 380 p')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-05-36.png';
   if(d.indexOf('стандартная обивка')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-09-04.png';
