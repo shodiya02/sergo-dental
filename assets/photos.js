@@ -11,6 +11,10 @@ function photoEnabled(){
 function photoFor(desc){
   if(!photoEnabled()) return null;
   var d=(desc||'').toLowerCase();
+  if(d.indexOf('\u0430\u0441\u043f\u0438\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0448\u043b\u0430\u043d\u0433\u0438 \u0441 \u0434\u0432\u043e\u0439\u043d\u043e\u0439 \u043a\u0430\u043c\u0435\u0440\u043e\u0439')>=0) return 'blank';
+  if(d.indexOf('\u0434\u0435\u0440\u0436\u0430\u0442\u0435\u043b\u044c \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043b\u043e\u0442\u043a\u0430')>=0) return 'blank';
+  if(d.indexOf('\u0441\u0442\u043e\u043b\u0438\u043a \u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442\u0430')>=0&&d.indexOf('\u0434\u0432\u0443\u0445\u0448\u0430\u0440\u043d\u0438\u0440\u043d')>=0) return 'assets/images/image_2026-08-15_17-36-58.png';
+  if(d.indexOf('\u043c\u043e\u0434\u0443\u043b\u044c \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u043e\u0433\u043e \u0430\u043f\u0435\u043a\u0441\u043b\u043e\u043a\u0430\u0442\u043e\u0440\u0430')>=0) return 'assets/images/image_2026-08-15_17-31-25.png';
   if(d.indexOf('\u043c\u043e\u043d\u0442\u0430\u0436\u043d\u0430\u044f \u043f\u043b\u0430\u0441\u0442\u0438\u043d\u0430')>=0) return 'blank';
   if(d.indexOf('\u043a\u0440\u0435\u0441\u043b\u043e stern 380 p')>=0) return 'assets/images/image_2026-08-15_16-55-33.png';
   if(d.indexOf('\u043e\u0431\u0438\u0432\u043a\u0430 \u043a\u0440\u0435\u0441\u043b\u0430')>=0&&d.indexOf('memory foam')<0) return 'assets/images/image_2026-08-15_16-56-28.png';
@@ -26,7 +30,7 @@ function photoFor(desc){
   if(d.indexOf(' t8 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')<0) return 'assets/images/image_2026-08-13_13-46-55.png';
   if(d.indexOf(' t9 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')>=0) return 'assets/images/image_2026-08-13_13-44-48.png';
   if(d.indexOf(' t9 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')<0) return 'assets/images/image_2026-08-13_14-20-05.png';
-  if(d.indexOf('i-xs4')>=0) return 'blank';
+  if(d.indexOf('i-xs4')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
   if(d.indexOf('i-xr3')>=0) return 'assets/images/image_2026-08-11_11-27-56.png';
   if(d.indexOf('\u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f rx dc \u043a \u0442\u043f\u043a')>=0) return 'blank';
   if(d.indexOf('\u043a\u0440\u043e\u043d\u0448\u0442\u0435\u0439\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0430')>=0) return 'blank';
@@ -36,7 +40,7 @@ function photoFor(desc){
   if(d.indexOf('rx dc hypersphere')>=0) return 'assets/images/image_2026-08-13_14-26-05.png';
   if(d.indexOf('внутриротовой датчик')>=0&&d.indexOf('zen-x')>=0) return 'assets/images/image_2026-08-13_14-31-23.png';
   if(d.indexOf('i-xs4')>=0&&d.indexOf('fluo')>=0&&d.indexOf('детекция')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
-  if(d.indexOf('кресло stern 380 p')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-05-36.png';
+  if(d.indexOf('i-xs4')>=0&&d.indexOf('эндодонт')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
   if(d.indexOf('стандартная обивка')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-09-04.png';
   if(d.indexOf('тип кресла')>=0&&d.indexOf('international')>=0) return 'assets/images/image_2026-08-15_16-33-28.png';
   if(d.indexOf('тип кресла')>=0&&d.indexOf('continental-hybrid')>=0) return 'assets/images/image_2026-08-15_16-35-32.png';
@@ -46,6 +50,7 @@ function photoFor(desc){
   if(d.indexOf('venus led mct')>=0&&d.indexOf('\u043d\u0430\u0441\u0442\u0435\u043d\u043d\u043e\u0435')>=0) return 'assets/images/image_2026-07-27_15-25-15.png';
   if(d.indexOf('venus led mct')>=0&&d.indexOf('\u043f\u043e\u0442\u043e\u043b\u043e\u0447\u043d\u043e\u0435')>=0) return 'assets/images/image_2026-07-27_15-24-29.png';
   if(d.indexOf('venus led mct')>=0) return 'assets/images/image_2026-07-27_15-15-47.png';
+  if(d.indexOf('stern weber sc-a3')>=0||d.indexOf('\u043c\u043e\u0434\u0443\u043b\u044c \u0441\u043a\u0430\u043b\u0435\u0440\u0430 sc-a3')>=0) return 'assets/images/image_2026-08-15_17-26-35.png';
   if(d.indexOf('stern weber sc-a2')>=0) return 'assets/images/image_2026-08-11_11-35-08.png';
   if(d.indexOf('ems piezon')>=0) return 'assets/images/image_2026-08-11_11-33-01.png';
   for(var i=0;i<PHOTO_RULES.length;i++){
