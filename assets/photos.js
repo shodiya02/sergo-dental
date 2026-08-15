@@ -11,11 +11,45 @@ function photoEnabled(){
 function photoFor(desc){
   if(!photoEnabled()) return null;
   var d=(desc||'').toLowerCase();
+  if(d.indexOf('\u043c\u043e\u043d\u0442\u0430\u0436\u043d\u0430\u044f \u043f\u043b\u0430\u0441\u0442\u0438\u043d\u0430')>=0) return 'blank';
+  if(d.indexOf('\u043a\u0440\u0435\u0441\u043b\u043e stern 380 p')>=0) return 'assets/images/image_2026-08-15_16-12-42.png';
+  if(d.indexOf('\u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u0430\u044f \u043e\u0431\u0438\u0432\u043a\u0430')>=0&&d.indexOf('\u043a\u0440\u0435\u0441\u043b\u0430')>=0) return 'assets/images/image_2026-08-15_16-16-25.png';
+  if(d.indexOf('\u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442 \u043e\u0431\u0438\u0432\u043a\u0438')>=0&&d.indexOf('memory foam')<0&&
+    (d.indexOf('\u043c\u043e\u0434\u0435\u043b\u0438 7')>=0||d.indexOf('\u043c\u043e\u0434\u0435\u043b\u0438 8')>=0||
+      d.indexOf('\u043c\u043e\u0434\u0435\u043b\u0438 9')>=0)) {
+    return 'assets/images/image_2026-08-13_13-45-45.png';
+  }
+  if(d.indexOf('100')>=0&&d.indexOf('t7')>=0&&d.indexOf('t8')>=0) return 'assets/images/image_2026-08-13_14-23-42.png';
+  if(d.indexOf(' t7 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')>=0) return 'assets/images/image_2026-08-13_13-44-48.png';
+  if(d.indexOf(' t7 ')>=0) return 'assets/images/image_2026-08-13_13-43-32.png';
+  if(d.indexOf(' t8 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')>=0) return 'assets/images/image_2026-08-13_13-44-48.png';
+  if(d.indexOf(' t8 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')<0) return 'assets/images/image_2026-08-13_13-46-55.png';
+  if(d.indexOf(' t9 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')>=0) return 'assets/images/image_2026-08-13_13-44-48.png';
+  if(d.indexOf(' t9 ')>=0&&d.indexOf('\u043a\u043e\u043b\u044c\u0446\u0435\u0432\u043e\u0439')<0) return 'assets/images/image_2026-08-13_14-20-05.png';
+  if(d.indexOf('i-xs4')>=0) return 'blank';
+  if(d.indexOf('i-xr3')>=0) return 'assets/images/image_2026-08-11_11-27-56.png';
+  if(d.indexOf('\u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f rx dc \u043a \u0442\u043f\u043a')>=0) return 'blank';
+  if(d.indexOf('\u043a\u0440\u043e\u043d\u0448\u0442\u0435\u0439\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0430')>=0) return 'blank';
+  if(d.indexOf('\u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f \u043f\u043b\u0430\u0442\u0430 \u043f\u0438\u0442\u0430\u043d\u0438\u044f \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0430')>=0) return 'blank';
+  if(d.indexOf('\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0441\u0442\u043e\u043b\u0430 \u0432\u0440\u0430\u0447\u0430 \u043f\u043e\u0434 \u0434\u0430\u0442\u0447\u0438\u043a')>=0) return 'blank';
+  if(d.indexOf('\u043c\u0443\u043b\u044c\u0442\u0438\u043c\u0435\u0434\u0438\u0439\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c \u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u0438 \u0434\u0430\u0442\u0447\u0438\u043a\u0430 zen-x')>=0) return 'blank';
+  if(d.indexOf('rx dc hypersphere')>=0) return 'assets/images/image_2026-08-13_14-26-05.png';
+  if(d.indexOf('zen-x')>=0) return 'assets/images/image_2026-08-13_14-31-23.png';
+  if(d.indexOf('i-xs4')>=0&&d.indexOf('fluo')>=0&&d.indexOf('детекция')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
+  if(d.indexOf('кресло stern 380 p')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-05-36.png';
+  if(d.indexOf('стандартная обивка')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-09-04.png';
+  if(d.indexOf('venus plus mct')>=0&&d.indexOf('usb-')>=0) return 'blank';
+  if(d.indexOf('venus plus mct')>=0) return 'assets/images/image_2026-07-27_15-18-25.png';
+  if(d.indexOf('venus led mct')>=0&&d.indexOf('\u043d\u0430\u0441\u0442\u0435\u043d\u043d\u043e\u0435')>=0) return 'assets/images/image_2026-07-27_15-25-15.png';
+  if(d.indexOf('venus led mct')>=0&&d.indexOf('\u043f\u043e\u0442\u043e\u043b\u043e\u0447\u043d\u043e\u0435')>=0) return 'assets/images/image_2026-07-27_15-24-29.png';
+  if(d.indexOf('venus led mct')>=0) return 'assets/images/image_2026-07-27_15-15-47.png';
+  if(d.indexOf('stern weber sc-a2')>=0) return 'assets/images/image_2026-08-11_11-35-08.png';
+  if(d.indexOf('ems piezon')>=0) return 'assets/images/image_2026-08-11_11-33-01.png';
   for(var i=0;i<PHOTO_RULES.length;i++){
     var r=PHOTO_RULES[i];
     for(var j=0;j<r.k.length;j++){
       if(d.indexOf(r.k[j])>=0){
-        if(r.f==='p06_x2697.png'||r.f==='p12_x2432.png') return 'blank';
+        if(r.f==='p06_x2697.png'||r.f==='p12_x2432.png'||r.f==='p08_x2655.png'||r.f==='p16_x2233.png') return 'blank';
         if(r.f==='p08_x2657.png') return 'assets/images/image_2026-07-29_10-49-50.png';
         if(r.f==='p13_x2335.png') return 'assets/images/image_2026-07-29_10-48-52.png';
         if(r.f==='p10_x2523.png') return 'assets/images/image_2026-08-11_11-27-56.png';
