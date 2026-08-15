@@ -1,0 +1,191 @@
+/* ============================================================
+   SERGO DENTAL — фирменные стили сайта
+   Палитра: Abyssal #1E2C37 · Blue Dacnis #3EC9F0 ·
+   Kinky Pinky #EF3FCE · Concrete #F2F2F2
+   ============================================================ */
+:root{
+  --ink:#1E2C37; --cyan:#3EC9F0; --cyan-ink:#0E90B8; --cyan-soft:#E4F7FD;
+  --pink:#EF3FCE; --bg:#F2F2F2; --panel:#fff; --muted:#5F6E79; --line:#E2E6E9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+
+/* ---------- навигация ---------- */
+nav{background:var(--ink);color:#fff;position:sticky;top:0;z-index:60}
+nav .wrap{display:flex;align-items:center;gap:22px;min-height:62px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.sd-logo{display:flex;align-items:center;gap:10px;margin-right:auto}
+.sd-mark{width:30px;height:30px;flex:none}
+.sd-word{font-size:11.5px;font-weight:800;letter-spacing:.2em;line-height:1.3}
+nav a.nl{font-size:12.5px;font-weight:600;letter-spacing:.06em;opacity:.8;padding:6px 2px;border-bottom:2px solid transparent}
+nav a.nl:hover{opacity:1}
+nav a.nl.on{opacity:1;border-bottom-color:var(--cyan)}
+nav a.cta{background:var(--cyan);color:var(--ink);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:10px}
+
+/* ---------- герой ---------- */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.hero .wave{position:absolute;top:-30px;right:-70px;width:620px;height:330px;pointer-events:none}
+.hero .wrap{position:relative;display:flex;gap:36px;align-items:center;padding-top:56px;padding-bottom:56px;flex-wrap:wrap}
+.hero .txt{flex:1;min-width:280px}
+.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+.hero h1{font-size:clamp(28px,4.6vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:12px 0 0}
+.h-line{width:130px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--cyan) 55%,var(--pink));margin:16px 0}
+.hero p{font-size:15px;opacity:.85;max-width:520px}
+.hero .pic{flex:1;min-width:280px}
+.hero .pic img{border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.btnrow{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:12px;padding:13px 22px;font-weight:700;font-size:14px;border:none;cursor:pointer}
+.btn.solid{background:var(--cyan);color:var(--ink)}
+.btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(62,201,240,.35)}
+.ticker{border-top:1px solid rgba(62,201,240,.2);padding:9px 0;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;overflow:hidden;color:rgba(62,201,240,.5);font-weight:600;text-align:center}
+
+/* ---------- секции ---------- */
+section{padding:54px 0}
+h2.sec{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.01em}
+.sec-line{width:74px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--cyan) 55%,var(--pink));margin:12px 0 28px}
+.lead{color:var(--muted);max-width:640px}
+
+/* ---------- карточки товаров ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(30,44,55,.12)}
+.card .ph{aspect-ratio:4/3;background:#fff;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .bd{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .cat{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-ink);font-weight:700}
+.card h3{font-size:18px;font-weight:800}
+.card p{font-size:13px;color:var(--muted);flex:1}
+.card .price{font-size:14px;font-weight:700}
+.card .price span{font-size:11.5px;color:var(--muted);font-weight:500}
+.card .go{margin-top:6px;background:var(--ink);color:#fff;text-align:center;border-radius:10px;padding:11px;font-weight:700;font-size:13.5px}
+.card .go.accent{background:var(--cyan);color:var(--ink)}
+.card.soon{opacity:.75}
+.card.soon .ph{display:grid;place-items:center;background:linear-gradient(135deg,#ECF1F3,#F7FAFB);color:var(--muted);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+
+/* ---------- преимущества ---------- */
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.feat .f{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.feat .n{width:34px;height:34px;border-radius:10px;background:var(--cyan-soft);color:var(--cyan-ink);display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+.feat h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.feat p{font-size:13px;color:var(--muted)}
+
+/* ---------- футер ---------- */
+footer{background:var(--ink);color:#fff;padding:44px 0 0;margin-top:30px}
+footer .cols{display:flex;gap:36px;flex-wrap:wrap;padding-bottom:36px}
+footer .col{min-width:220px;flex:1}
+footer h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+footer p, footer a.fl{display:block;font-size:13.5px;opacity:.85;margin-bottom:8px}
+footer a.fl:hover{opacity:1}
+
+/* ============================================================
+   Конфигуратор (общие стили для всех моделей)
+   ============================================================ */
+body.cfg{padding-bottom:120px}
+.cfg-head{position:relative;background:var(--ink);color:#fff;padding:24px 20px 0;overflow:hidden}
+.cfg-head .wave{position:absolute;top:-30px;right:-70px;width:560px;height:300px;pointer-events:none}
+.cfg-head .wrap{max-width:920px;margin:0 auto;position:relative}
+.sw-tag{font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.55;font-weight:600;margin-bottom:22px}
+.cfg-head h1{font-size:clamp(24px,4.6vw,36px);font-weight:800;letter-spacing:-.02em;margin:0}
+.cfg-head h1 .thin{font-weight:400;opacity:.85}
+.h1-line{width:130px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--cyan) 55%,var(--pink));margin:10px 0 12px}
+.cfg-head .sub{font-size:14px;opacity:.85;max-width:600px}
+.dealer{margin:14px 0 22px;font-size:12px;opacity:.65}
+.ticker{position:relative;border-top:1px solid rgba(62,201,240,.2);padding:8px 0;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;overflow:hidden;color:rgba(62,201,240,.5);font-weight:600}
+
+main#main{max-width:920px;margin:22px auto 0;padding:0 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden}
+.card-head{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none}
+.card-head:hover{background:#FAFCFC}
+.card-head h2{font-size:16px;font-weight:700;flex:1;letter-spacing:-.01em}
+.badge{font-size:12px;font-weight:600;color:var(--cyan-ink);background:var(--cyan-soft);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.badge:empty{display:none}
+.chev{width:22px;height:22px;flex:none;display:grid;place-items:center;color:var(--muted);transition:transform .2s}
+.card.open .chev{transform:rotate(180deg)}
+.card-body{display:none;border-top:1px solid var(--line)}
+.card.open .card-body{display:block}
+.base-note{padding:12px 18px;font-size:12.5px;color:var(--muted);background:#FBFCFC;border-bottom:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);transition:background .15s}
+.row:last-child{border-bottom:none}
+.row.on{background:#EDFAFF}
+.row .info{flex:1;min-width:0}
+.row .desc{font-size:14px;font-weight:500}
+.row .meta{font-size:11.5px;color:var(--muted);margin-top:2px}
+.row .meta .code{font-family:'IBM Plex Mono',monospace}
+.row .price{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;white-space:nowrap}
+.row.on .price{color:var(--ink)}
+.thumb{width:44px;height:44px;flex:none;object-fit:cover;border-radius:9px;border:1px solid var(--line);cursor:zoom-in;background:#fff}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:none;background:#fff}
+.stepper button{width:34px;height:34px;border:none;background:none;font-size:18px;color:var(--cyan-ink);cursor:pointer;font-weight:700;line-height:1}
+.stepper .q{width:30px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600}
+.row:not(.on) .stepper .q{color:var(--muted)}
+.ibtn{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--cyan-ink);font-weight:800;font-size:13px;cursor:pointer;flex:none;font-family:'IBM Plex Mono',monospace}
+
+.totalbar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:#fff;z-index:50;box-shadow:0 -8px 24px rgba(10,40,48,.25)}
+.totalbar .wrap{max-width:920px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:14px 16px}
+.tb-info{flex:1;min-width:0}
+.tb-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;font-weight:600}
+.tb-sum{color:var(--cyan);font-family:'IBM Plex Mono',monospace;font-size:clamp(20px,4.5vw,28px);font-weight:600}
+.tb-count{font-size:12px;opacity:.65;margin-top:1px}
+.btn-primary{background:var(--cyan);color:var(--ink);border:none;border-radius:11px;padding:12px 18px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:11px;padding:12px 18px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+
+.lightbox{position:fixed;inset:0;background:rgba(12,25,30,.86);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lightbox.show{display:flex}
+.lightbox img{max-width:100%;max-height:82vh;border-radius:12px;background:#fff}
+.lightbox .cap{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:#fff;font-size:14px;padding:0 30px}
+.pmodal{position:fixed;inset:0;background:rgba(30,44,55,.55);z-index:90;display:none;align-items:flex-end;justify-content:center}
+.pmodal.show{display:flex}
+.pcard{background:#fff;width:100%;max-width:560px;max-height:86vh;overflow:auto;border-radius:18px 18px 0 0;padding:18px 20px 24px}
+@media(min-width:600px){.pmodal{align-items:center;padding:20px}.pcard{border-radius:18px}}
+.pcard .grab{width:44px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 14px}
+.pcard img.pph{width:100%;max-height:260px;object-fit:contain;border-radius:12px;background:#F7FAFB;border:1px solid var(--line);margin-bottom:14px}
+.pcard .noph{height:120px;border-radius:12px;background:var(--cyan-soft);display:grid;place-items:center;margin-bottom:14px}
+.pcard .noph svg{width:44px;height:44px;opacity:.5}
+.pcard h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.pcard .pmeta{display:flex;gap:14px;align-items:baseline;margin-bottom:12px}
+.pcard .pmeta .code{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
+.pcard .pmeta .pprice{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600;color:var(--cyan-ink)}
+.pcard .ptext{font-size:13.5px;line-height:1.6;color:#33434D}
+.pcard .pclose{margin-top:16px;width:100%;border:none;border-radius:11px;padding:12px;background:var(--ink);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
+
+.picker{max-width:960px;margin:0 auto;padding:26px 16px 20px}
+.pk-step{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-ink);font-weight:700;margin-bottom:4px}
+.pk-h{font-size:clamp(20px,3.2vw,26px);font-weight:800;margin-bottom:6px}
+.pk-line{width:74px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--cyan) 55%,var(--pink));margin:10px 0 18px}
+.pk-sub{font-size:13.5px;color:var(--muted);max-width:620px;margin-bottom:20px}
+.cgroup-h{font-size:13px;font-weight:800;margin:18px 0 12px}
+.cgroup-h span{font-weight:500;color:var(--muted);font-size:11.5px}
+.swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:11px}
+.sw{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px;cursor:pointer;text-align:center;transition:transform .12s,box-shadow .12s,border-color .12s}
+.sw:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,44,55,.1)}
+.sw.pick{border-color:var(--cyan);box-shadow:0 0 0 2px var(--cyan)}
+.sw .dot{width:100%;height:52px;border-radius:8px;margin-bottom:7px;border:1px solid rgba(0,0,0,.08)}
+.sw .nm{font-size:11px;font-weight:600;line-height:1.25}
+.sw .cd{font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+.pk-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.pk-btn{border:none;border-radius:12px;padding:13px 22px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Montserrat',sans-serif}
+.pk-btn.solid{background:var(--cyan);color:var(--ink)}
+.pk-btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.cbanner{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:16px auto 0;max-width:920px}
+.cbanner .ct{flex:1}
+.cbanner button{background:none;border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:12px;font-weight:600;color:var(--cyan-ink);cursor:pointer;font-family:'Montserrat',sans-serif}
+.hidden{display:none!important}
+
+#offer{display:none}
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  nav,.cfg-head,main,.totalbar,.picker,.cbanner{display:none!important}
+  #offer{display:block;padding:6mm 2mm;color:#000}
+  #offer .obrand{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;border-bottom:3px solid #3EC9F0;padding-bottom:6px;margin-bottom:10px}
+  #offer h1{font-size:20px;margin-bottom:2px}
+  #offer .oh{font-size:11px;color:#444;margin-bottom:14px}
+  #offer table{width:100%;border-collapse:collapse;font-size:11.5px}
+  #offer th{text-align:left;border-bottom:1.5px solid #000;padding:5px 6px;font-size:10.5px;text-transform:uppercase}
+  #offer td{border-bottom:1px solid #ddd;padding:5px 6px;vertical-align:top}
+  #offer td.n,#offer th.n{text-align:right;font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+  #offer .sec td{font-weight:700;background:#f2f2f2}
+  #offer .total-row td{font-weight:800;font-size:13px;border-top:2px solid #000;border-bottom:none}
+  #offer .ofoot{margin-top:16px;font-size:10px;color:#555}
+}

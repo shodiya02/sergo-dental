@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S280 TRC Continental — конфигуратор | Sergo Dental</title>
+<meta name="description" content="Конфигуратор комплектации Stern Weber S280 TRC Continental. Цены в долларах, расчёт онлайн. Sergo Dental — официальный дистрибьютор в Узбекистане.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="cfg">
+
+<nav>
+  <div class="wrap">
+    <a class="sd-logo" href="index.html">
+      <svg class="sd-mark" viewBox="0 0 72 72" aria-hidden="true">
+        <path d="M15 32v-6c0-7.7 6.3-14 14-14h28v13H30c-1.7 0-3 1.3-3 3v4H15z" fill="#3EC9F0"/>
+        <path d="M57 40v6c0 7.7-6.3 14-14 14H15V47h27c1.7 0 3-1.3 3-3v-4h12z" fill="#3EC9F0"/>
+      </svg>
+      <span class="sd-word">SERGO<br>DENTAL</span>
+    </a>
+    <a class="nl" href="index.html">Главная</a>
+    <a class="nl" href="catalog.html">Каталог</a>
+    <a class="nl" href="index.html#contacts">Контакты</a>
+  </div>
+</nav>
+
+<div class="cfg-head">
+  <svg class="wave" viewBox="0 0 560 300" aria-hidden="true">
+    <path d="M0 150 C 160 70, 330 230, 560 60" stroke="#3EC9F0" stroke-opacity=".06" fill="none"/>
+    <path d="M0 178 C 160 94, 330 250, 560 86" stroke="#3EC9F0" stroke-opacity=".11" fill="none"/>
+    <path d="M0 206 C 160 118, 330 270, 560 112" stroke="#3EC9F0" stroke-opacity=".16" fill="none"/>
+    <path d="M0 234 C 160 142, 330 290, 560 138" stroke="#3EC9F0" stroke-opacity=".21" fill="none"/>
+  </svg>
+  <div class="wrap">
+    <div class="sw-tag">Stern Weber · Cefla · Italy</div>
+    <h1 id="mdlName">S280 <span class="thin">TRC Continental</span></h1>
+    <div class="h1-line"></div>
+    <div class="sub" id="mdlSub">Дисплей FULL Touch CLINIC 7", кресло Stern 280 P, опционально система SLIDING и SOFT-MOTION.</div>
+    <div class="dealer">Sergo Dental — официальный дистрибьютор Stern Weber в Узбекистане · Ташкент · +998 (78) 888-11-10 · info@sergodental.com</div>
+    <div class="ticker">SERGO DENTAL &nbsp;·&nbsp; STERN WEBER &nbsp;·&nbsp; SERGO DENTAL &nbsp;·&nbsp; STERN WEBER &nbsp;·&nbsp; SERGO DENTAL &nbsp;·&nbsp; STERN WEBER &nbsp;·&nbsp; SERGO DENTAL &nbsp;·&nbsp; STERN WEBER &nbsp;·&nbsp; SERGO DENTAL &nbsp;·&nbsp; STERN WEBER &nbsp;·&nbsp; SERGO DENTAL &nbsp;·&nbsp; STERN WEBER &nbsp;·&nbsp; </div>
+  </div>
+</div>
+
+<div class="picker" id="screenColor">
+  <div class="pk-step">Шаг 1 из 2</div>
+  <div class="pk-h">Выберите цвет обивки</div>
+  <div class="pk-line"></div>
+  <div class="pk-sub">19 цветов в двух палитрах. Выбор влияет на внешний вид кресла; на стоимость не влияет — цвет указывается при заказе.</div>
+  <div id="colorArea"></div>
+  <div class="pk-actions">
+    <button class="pk-btn solid" onclick="goConfig()">Перейти к комплектации →</button>
+    <button class="pk-btn ghost" onclick="skipColor()">Пропустить</button>
+  </div>
+</div>
+
+<div id="cbannerWrap"></div>
+<main id="main" class="hidden"></main>
+
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
+  <img id="lbImg" alt=""><div class="cap" id="lbCap"></div>
+</div>
+
+<div class="pmodal" id="pmodal" onclick="if(event.target===this)this.classList.remove('show')">
+  <div class="pcard">
+    <div class="grab"></div>
+    <div id="pcardBody"></div>
+    <button class="pclose" onclick="document.getElementById('pmodal').classList.remove('show')">Закрыть</button>
+  </div>
+</div>
+
+<div class="totalbar">
+  <div class="wrap">
+    <div class="tb-info">
+      <div class="tb-label">Итого конфигурация</div>
+      <div class="tb-sum" id="tbSum">—</div>
+      <div class="tb-count" id="tbCount"></div>
+    </div>
+    <button class="btn-ghost" id="btnReset">Сбросить</button>
+    <button class="btn-primary" id="btnOffer">Скачать КП</button>
+  </div>
+</div>
+
+<div id="offer"></div>
+
+<script>const PRICE_K = 0.44;</script>
+<script src="assets/photos.js"></script>
+<script src="data/s280-trc-continental.js"></script>
+<script src="assets/configurator.js"></script>
+</body>
+</html>
