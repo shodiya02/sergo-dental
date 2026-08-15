@@ -10,6 +10,7 @@
   var fmt = function (n) { return n.toLocaleString('ru-RU') + ' $'; };
   var K = (typeof PRICE_K !== 'undefined') ? PRICE_K : 0.44;
   var cp = function (p) { return Math.round(p * K); };
+  var displayName = (MODEL.name || '').replace(/\s+Continental$/, '');
 
   var COLORS = {
     standard: [
@@ -178,7 +179,7 @@
     document.getElementById('screenColor').classList.add('hidden');
     document.getElementById('main').classList.remove('hidden');
     document.getElementById('cbannerWrap').innerHTML =
-      '<div class="cbanner"><div class="ct"><b>' + MODEL.name + '</b><br>' +
+      '<div class="cbanner"><div class="ct"><b>' + displayName + '</b><br>' +
       '<span style="font-size:12px;color:var(--muted)">' +
       (CHOSEN.colorName ? 'Цвет обивки: ' + CHOSEN.colorName + ' (' + CHOSEN.color + ')' : 'Цвет обивки не выбран') +
       '</span></div><button onclick="goColor()">Изменить</button></div>';
@@ -206,7 +207,7 @@
     document.getElementById('offer').innerHTML =
       '<div class="obrand">Sergo Dental · официальный дистрибьютор Stern Weber</div>' +
       '<h1>Коммерческое предложение</h1>' +
-      '<div class="oh">Стоматологическая установка ' + MODEL.name + ' (Cefla, Италия)' +
+      '<div class="oh">Стоматологическая установка ' + displayName + ' (Cefla, Италия)' +
       (CHOSEN.colorName ? ' · цвет обивки: ' + CHOSEN.colorName + ' (' + CHOSEN.color + ')' : '') + '<br>' +
       'Sergo Dental · Ташкент, Узбекистан · +998 (78) 888-11-10 · info@sergodental.com &nbsp;·&nbsp; дата: ' + today + '</div>' +
       '<table><tr><th>Наименование</th><th class="n">Артикул</th><th class="n">Кол-во</th>' +
@@ -219,7 +220,7 @@
 
   /* ---------- запуск ---------- */
   document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('mdlName').innerHTML = MODEL.nameHtml || MODEL.name;
+    document.getElementById('mdlName').innerHTML = MODEL.nameHtml || displayName;
     document.getElementById('mdlSub').textContent = MODEL.sub || '';
     document.getElementById('btnReset').onclick = function () { buildState(); render(); };
     document.getElementById('btnOffer').onclick = makeOffer;

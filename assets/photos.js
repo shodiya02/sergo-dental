@@ -38,6 +38,9 @@ function photoFor(desc){
   if(d.indexOf('i-xs4')>=0&&d.indexOf('fluo')>=0&&d.indexOf('детекция')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
   if(d.indexOf('кресло stern 380 p')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-05-36.png';
   if(d.indexOf('стандартная обивка')>=0&&d.indexOf('стандартной спинк')>=0) return 'assets/images/image_2026-08-15_16-09-04.png';
+  if(d.indexOf('тип кресла')>=0&&d.indexOf('international')>=0) return 'assets/images/image_2026-08-15_16-33-28.png';
+  if(d.indexOf('тип кресла')>=0&&d.indexOf('continental-hybrid')>=0) return 'assets/images/image_2026-08-15_16-35-32.png';
+  if(d.indexOf('тип кресла')>=0&&d.indexOf('continental')>=0) return 'assets/images/image_2026-08-15_16-34-12.png';
   if(d.indexOf('venus plus mct')>=0&&d.indexOf('usb-')>=0) return 'blank';
   if(d.indexOf('venus plus mct')>=0) return 'assets/images/image_2026-07-27_15-18-25.png';
   if(d.indexOf('venus led mct')>=0&&d.indexOf('\u043d\u0430\u0441\u0442\u0435\u043d\u043d\u043e\u0435')>=0) return 'assets/images/image_2026-07-27_15-25-15.png';
