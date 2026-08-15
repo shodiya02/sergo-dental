@@ -116,6 +116,7 @@ main#main{max-width:920px;margin:22px auto 0;padding:0 14px}
 .row .price{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;white-space:nowrap}
 .row.on .price{color:var(--ink)}
 .thumb{width:44px;height:44px;flex:none;object-fit:cover;border-radius:9px;border:1px solid var(--line);cursor:zoom-in;background:#fff}
+.thumb.blank{cursor:default}
 .stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:none;background:#fff}
 .stepper button{width:34px;height:34px;border:none;background:none;font-size:18px;color:var(--cyan-ink);cursor:pointer;font-weight:700;line-height:1}
 .stepper .q{width:30px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600}

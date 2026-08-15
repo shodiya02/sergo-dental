@@ -14,7 +14,14 @@ function photoFor(desc){
   for(var i=0;i<PHOTO_RULES.length;i++){
     var r=PHOTO_RULES[i];
     for(var j=0;j<r.k.length;j++){
-      if(d.indexOf(r.k[j])>=0) return r.f?PHOTOS[r.f]||null:null;
+      if(d.indexOf(r.k[j])>=0){
+        if(r.f==='p06_x2697.png'||r.f==='p12_x2432.png') return 'blank';
+        if(r.f==='p08_x2657.png') return 'assets/images/image_2026-07-29_10-49-50.png';
+        if(r.f==='p13_x2335.png') return 'assets/images/image_2026-07-29_10-48-52.png';
+        if(r.f==='p10_x2523.png') return 'assets/images/image_2026-08-11_11-27-56.png';
+        if(r.f==='p10_x2519.png') return 'assets/images/image_2026-08-11_11-31-26.png';
+        return r.f?PHOTOS[r.f]||null:null;
+      }
     }
   }
   return null;

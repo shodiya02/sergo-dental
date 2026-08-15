@@ -58,8 +58,10 @@
 
   function rowHTML(s, i, it) {
     var ph = photo(it.desc);
-    var thumb = ph ? '<img class="thumb" src="' + ph + '" loading="lazy" onerror="this.remove()" ' +
-      'onclick="zoom(\'' + ph + '\',' + JSON.stringify(it.desc).replace(/"/g, '&quot;') + ')">' : '';
+    var thumb = ph === 'blank'
+      ? '<span class="thumb blank" aria-hidden="true"></span>'
+      : ph ? '<img class="thumb" src="' + ph + '" loading="lazy" onerror="this.remove()" ' +
+        'onclick="zoom(\'' + ph + '\',' + JSON.stringify(it.desc).replace(/"/g, '&quot;') + ')">' : '';
     return '<div class="row ' + (it.qty > 0 ? 'on' : '') + '" id="r_' + key(s, i) + '">' +
       '<div class="stepper">' +
         '<button onclick="chg(' + s + ',' + i + ',-1)">−</button>' +
