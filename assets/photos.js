@@ -8,9 +8,33 @@ var PHOTO_RULES = [{"k":["под 1 стандартный"],"f":"p07_x2677.png"}
 function photoEnabled(){
   return (typeof MODEL!=='undefined') && /^S(200|220TR|280\s?TRC|300|320TR|380\s?TRC)\b/i.test(MODEL.name||'');
 }
-function photoFor(desc){
+/* Пер-модельные переопределения из assets/photo-overrides.js.
+   Возвращает undefined, если для этой модели правила нет — тогда
+   работают обычные глобальные правила ниже. */
+function photoOverride(d,model){
+  if(typeof PHOTO_OVERRIDES==='undefined'||!PHOTO_OVERRIDES||!model) return undefined;
+  var m=String(model).toLowerCase(),lists=[],key;
+  if(PHOTO_OVERRIDES[m]) lists.push(PHOTO_OVERRIDES[m]);
+  for(key in PHOTO_OVERRIDES){
+    if(!Object.prototype.hasOwnProperty.call(PHOTO_OVERRIDES,key)) continue;
+    if(key!==m&&m.indexOf(key.toLowerCase()+'-')===0) lists.push(PHOTO_OVERRIDES[key]);
+  }
+  for(var l=0;l<lists.length;l++){
+    var rules=lists[l]||[];
+    for(var i=0;i<rules.length;i++){
+      var r=rules[i]||{},ks=r.k||[];
+      for(var j=0;j<ks.length;j++){
+        if(d.indexOf(String(ks[j]).toLowerCase())>=0) return r.f===undefined?null:r.f;
+      }
+    }
+  }
+  return undefined;
+}
+function photoFor(desc,model){
   if(!photoEnabled()) return null;
   var d=(desc||'').toLowerCase();
+  var _ov=photoOverride(d,model);
+  if(_ov!==undefined) return _ov;
   if(d.indexOf('\u0430\u0441\u043f\u0438\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0448\u043b\u0430\u043d\u0433\u0438 \u0441 \u0434\u0432\u043e\u0439\u043d\u043e\u0439 \u043a\u0430\u043c\u0435\u0440\u043e\u0439')>=0) return 'blank';
   if(d.indexOf('\u0434\u0435\u0440\u0436\u0430\u0442\u0435\u043b\u044c \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043b\u043e\u0442\u043a\u0430')>=0) return 'blank';
   if(d.indexOf('\u043c\u043e\u0434\u0443\u043b\u044c \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u043e\u0433\u043e \u0430\u043f\u0435\u043a\u0441\u043b\u043e\u043a\u0430\u0442\u043e\u0440\u0430')>=0) return 'assets/images/image_2026-08-15_17-31-25.png';
@@ -33,7 +57,7 @@ function photoFor(desc){
   if(d.indexOf('i-xs4')>=0) return 'assets/images/image_2026-08-15_15-49-46.png';
   if(d.indexOf('i-xr3')>=0) return 'assets/images/image_2026-08-11_11-27-56.png';
   if(d.indexOf('\u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f rx dc \u043a \u0442\u043f\u043a')>=0) return 'blank';
-  if(d.indexOf('\u043a\u0440\u043e\u043d\u0448\u0442\u0435\u0439\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0430')>=0) return 'blank';
+  if(d.indexOf('\u043a\u0440\u043e\u043d\u0448\u0442\u0435\u0439\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0430')>=0&&d.indexOf('\u0441\u0432\u0435\u0442\u0438\u043b\u044c\u043d\u0438\u043a')<0) return 'blank';
   if(d.indexOf('\u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f \u043f\u043b\u0430\u0442\u0430 \u043f\u0438\u0442\u0430\u043d\u0438\u044f \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0430')>=0) return 'blank';
   if(d.indexOf('\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0441\u0442\u043e\u043b\u0430 \u0432\u0440\u0430\u0447\u0430 \u043f\u043e\u0434 \u0434\u0430\u0442\u0447\u0438\u043a')>=0) return 'blank';
   if(d.indexOf('\u043c\u0443\u043b\u044c\u0442\u0438\u043c\u0435\u0434\u0438\u0439\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c \u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u0438 \u0434\u0430\u0442\u0447\u0438\u043a\u0430 zen-x')>=0) return 'blank';

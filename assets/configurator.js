@@ -35,8 +35,18 @@
   var state = [];
   var PH = (typeof PHOTOS !== 'undefined') ? PHOTOS : {};
 
+  /* id страницы = имя html-файла без расширения (совпадает с именем data/*.js).
+     Нужен, чтобы фото можно было переопределить для одной модели —
+     см. assets/photo-overrides.js */
+  var MODEL_ID = (function () {
+    try {
+      var last = (location.pathname || '').split('/').pop() || '';
+      return last.replace(/\.html?$/i, '').toLowerCase();
+    } catch (e) { return ''; }
+  })();
+
   function photo(desc) {
-    if (typeof photoFor === 'function') return photoFor(desc);
+    if (typeof photoFor === 'function') return photoFor(desc, MODEL_ID);
     return null;
   }
 
