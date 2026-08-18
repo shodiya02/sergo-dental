@@ -16,6 +16,7 @@ function photoFor(desc){
   if(d.indexOf('\u0441\u0442\u043e\u043b\u0438\u043a \u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442\u0430')>=0&&d.indexOf('\u0434\u0432\u0443\u0445\u0448\u0430\u0440\u043d\u0438\u0440\u043d')>=0) return 'assets/images/image_2026-08-15_17-36-58.png';
   if(d.indexOf('\u043c\u043e\u0434\u0443\u043b\u044c \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u043e\u0433\u043e \u0430\u043f\u0435\u043a\u0441\u043b\u043e\u043a\u0430\u0442\u043e\u0440\u0430')>=0) return 'assets/images/image_2026-08-15_17-31-25.png';
   if(d.indexOf('\u043c\u043e\u043d\u0442\u0430\u0436\u043d\u0430\u044f \u043f\u043b\u0430\u0441\u0442\u0438\u043d\u0430')>=0) return 'blank';
+  if(d.indexOf('кресло stern 380 p')>=0&&d.indexOf('nordic')>=0) return 'assets/images/image_2026-08-15_16-12-42.png';
   if(d.indexOf('\u043a\u0440\u0435\u0441\u043b\u043e stern 380 p')>=0) return 'assets/images/image_2026-08-15_16-55-33.png';
   if(d.indexOf('\u043e\u0431\u0438\u0432\u043a\u0430 \u043a\u0440\u0435\u0441\u043b\u0430')>=0&&d.indexOf('memory foam')<0) return 'assets/images/image_2026-08-15_16-56-28.png';
   if(d.indexOf('\u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442 \u043e\u0431\u0438\u0432\u043a\u0438')>=0&&d.indexOf('memory foam')<0&&
@@ -53,6 +54,7 @@ function photoFor(desc){
   if(d.indexOf('stern weber sc-a3')>=0||d.indexOf('\u043c\u043e\u0434\u0443\u043b\u044c \u0441\u043a\u0430\u043b\u0435\u0440\u0430 sc-a3')>=0) return 'assets/images/image_2026-08-15_17-26-35.png';
   if(d.indexOf('stern weber sc-a2')>=0) return 'assets/images/image_2026-08-11_11-35-08.png';
   if(d.indexOf('ems piezon')>=0) return 'assets/images/image_2026-08-11_11-33-01.png';
+  if(d.indexOf('столик ассистента')>=0) return 'assets/images/image_2026-07-29_10-49-50.png';
   for(var i=0;i<PHOTO_RULES.length;i++){
     var r=PHOTO_RULES[i];
     for(var j=0;j<r.k.length;j++){
