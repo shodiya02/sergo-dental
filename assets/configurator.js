@@ -10,7 +10,13 @@
   var fmt = function (n) { return n.toLocaleString('ru-RU') + ' $'; };
   var K = (typeof PRICE_K !== 'undefined') ? PRICE_K : 0.44;
   var cp = function (p) { return Math.round(p * K); };
-  var displayName = (MODEL.name || '').replace(/\s+Continental$/, '');
+  /* LINE_PAGE — опционально задаётся на странице перед подключением этого файла
+     (const LINE_PAGE = 'имя-страницы-линейки.html';). Её наличие означает, что
+     выбор исполнения уже сделан на отдельной странице линейки: экран цвета
+     обивки пропускается, а в баннере и КП печатается полное имя исполнения
+     без обрезки суффикса "Continental". */
+  var LINE_MODE = (typeof LINE_PAGE !== 'undefined');
+  var displayName = LINE_MODE ? (MODEL.name || '') : (MODEL.name || '').replace(/\s+Continental$/, '');
 
   var COLORS = {
     standard: [
@@ -180,19 +186,23 @@
   window.pickColor = function (code, name) { CHOSEN.color = code; CHOSEN.colorName = name; showColor(); };
   window.skipColor = function () { CHOSEN.color = null; CHOSEN.colorName = null; goConfig(); };
   window.goColor = function () {
+    if (LINE_MODE) { location.href = LINE_PAGE; return; }
     document.getElementById('screenColor').classList.remove('hidden');
     document.getElementById('main').classList.add('hidden');
     document.getElementById('cbannerWrap').innerHTML = '';
     window.scrollTo(0, 0);
   };
   window.goConfig = function () {
-    document.getElementById('screenColor').classList.add('hidden');
+    var sc = document.getElementById('screenColor');
+    if (sc) sc.classList.add('hidden');
     document.getElementById('main').classList.remove('hidden');
-    document.getElementById('cbannerWrap').innerHTML =
-      '<div class="cbanner"><div class="ct"><b>' + displayName + '</b><br>' +
-      '<span style="font-size:12px;color:var(--muted)">' +
-      (CHOSEN.colorName ? 'Цвет обивки: ' + CHOSEN.colorName + ' (' + CHOSEN.color + ')' : 'Цвет обивки не выбран') +
-      '</span></div><button onclick="goColor()">Изменить</button></div>';
+    document.getElementById('cbannerWrap').innerHTML = LINE_MODE
+      ? '<div class="cbanner"><div class="ct"><b>' + displayName + '</b></div>' +
+        '<button onclick="goColor()">Другое исполнение</button></div>'
+      : '<div class="cbanner"><div class="ct"><b>' + displayName + '</b><br>' +
+        '<span style="font-size:12px;color:var(--muted)">' +
+        (CHOSEN.colorName ? 'Цвет обивки: ' + CHOSEN.colorName + ' (' + CHOSEN.color + ')' : 'Цвет обивки не выбран') +
+        '</span></div><button onclick="goColor()">Изменить</button></div>';
     window.scrollTo(0, 0);
   };
 
@@ -234,7 +244,7 @@
     document.getElementById('mdlSub').textContent = MODEL.sub || '';
     document.getElementById('btnReset').onclick = function () { buildState(); render(); };
     document.getElementById('btnOffer').onclick = makeOffer;
-    showColor();
+    if (LINE_MODE) { goConfig(); } else { showColor(); }
     buildState();
     render();
   });
