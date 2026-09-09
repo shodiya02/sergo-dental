@@ -42,20 +42,8 @@
   </div>
 </div>
 
-<div class="picker" id="screenColor">
-  <div class="pk-step">Шаг 1 из 2</div>
-  <div class="pk-h">Выберите цвет обивки</div>
-  <div class="pk-line"></div>
-  <div class="pk-sub">19 цветов в двух палитрах. Выбор влияет на внешний вид кресла; на стоимость не влияет — цвет указывается при заказе.</div>
-  <div id="colorArea"></div>
-  <div class="pk-actions">
-    <button class="pk-btn solid" onclick="goConfig()">Перейти к комплектации →</button>
-    <button class="pk-btn ghost" onclick="skipColor()">Пропустить</button>
-  </div>
-</div>
-
 <div id="cbannerWrap"></div>
-<main id="main" class="hidden"></main>
+<main id="main"></main>
 
 <div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
   <img id="lbImg" alt=""><div class="cap" id="lbCap"></div>
@@ -83,7 +71,7 @@
 
 <div id="offer"></div>
 
-<script>const PRICE_K = 0.44;</script>
+<script>const PRICE_K = 0.44; const LINE_PAGE = 's320tr.html';</script>
 <script src="assets/photos.js"></script>
 <script src="assets/photo-overrides.js"></script>
 <script src="data/s320tr-side-delivery.js"></script>
