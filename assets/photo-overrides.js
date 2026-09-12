@@ -212,6 +212,16 @@ var PHOTO_OVERRIDES = {
       f: null }
   ],
 
+  // Только страница S320TR Side Delivery
+  "s320tr-side-delivery": [
+    { k: ["установка s320 tr side delivery"],
+      f: "assets/images/image_2026-09-10_14-10-12.png" },
+    { k: ["кресло stern 320 side с системой sliding, бесшумными моторами и soft motion"],
+      f: "assets/images/image_2026-08-15_16-05-36.png" },
+    { k: ["столик ассистента на двухшарнирном плече, регулируемый по высоте, на 5"],
+      f: "assets/images/image_2026-08-15_17-36-58.png" }
+  ],
+
   // Только страница S320TR International
   "s320tr-international": [
     { k: ["трансторакальный столик-поднос под 2 стандартных лотка"],
