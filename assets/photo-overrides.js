@@ -147,7 +147,9 @@ var PHOTO_OVERRIDES = {
   // Только страница S380 TRC Continental
   "s380-trc-continental": [
     { k: ["установка s380 trc continental с сенсорным дисплеем"],
-      f: "assets/images/image_2026-09-10_10-55-20.png" }
+      f: "assets/images/image_2026-09-10_10-55-20.png" },
+    { k: ["модуль 6-функционального прямого шприца (нерж. сталь)"],
+      f: "assets/images/image_2026-08-18_13-35-13.png" }
   ],
 
   // Только страница S380 TRC Continental Hybrid
