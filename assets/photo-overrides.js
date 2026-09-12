@@ -144,6 +144,12 @@ var PHOTO_OVERRIDES = {
       f: null }
   ],
 
+  // Только страница S380 TRC Continental
+  "s380-trc-continental": [
+    { k: ["установка s380 trc continental с сенсорным дисплеем"],
+      f: "assets/images/image_2026-09-10_10-55-20.png" }
+  ],
+
   // Только страница S380 TRC Continental Hybrid
   "s380-trc-continental-hybrid": [
     { k: ["установка s380 trc continental hybrid с сенсорным дисплеем"],
