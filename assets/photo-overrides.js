@@ -57,6 +57,16 @@ var PHOTO_OVERRIDES = {
       f: null }
   ],
 
+  // Только страница S320TR Continental Hybrid
+  "s320tr-continental-hybrid": [
+    { k: ["установка s320 tr continental hybrid с дисплеем"],
+      f: "assets/images/image_2026-09-10_14-05-24.png" },
+    { k: ["универсальный столик ассистента на трёхшарнирном плече, на 5"],
+      f: "assets/images/image_2026-08-15_17-36-58.png" },
+    { k: ["3-функционального углового шприца — на столике ассистента"],
+      f: "assets/images/image_2026-08-18_13-35-13.png" }
+  ],
+
   // Только страница S320TR Continental
   "s320tr-continental": [
     { k: ["столик ассистента на двухшарнирном плече, регулируемый по высоте, на 5"],
