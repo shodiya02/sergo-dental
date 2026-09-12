@@ -151,24 +151,6 @@ main#main{max-width:920px;margin:22px auto 0;padding:0 14px}
 .pcard .ptext{font-size:13.5px;line-height:1.6;color:#33434D}
 .pcard .pclose{margin-top:16px;width:100%;border:none;border-radius:11px;padding:12px;background:var(--ink);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
 
-.picker{max-width:960px;margin:0 auto;padding:26px 16px 20px}
-.pk-step{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-ink);font-weight:700;margin-bottom:4px}
-.pk-h{font-size:clamp(20px,3.2vw,26px);font-weight:800;margin-bottom:6px}
-.pk-line{width:74px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--cyan) 55%,var(--pink));margin:10px 0 18px}
-.pk-sub{font-size:13.5px;color:var(--muted);max-width:620px;margin-bottom:20px}
-.cgroup-h{font-size:13px;font-weight:800;margin:18px 0 12px}
-.cgroup-h span{font-weight:500;color:var(--muted);font-size:11.5px}
-.swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(124px,1fr));gap:11px}
-.sw{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px;cursor:pointer;text-align:center;transition:transform .12s,box-shadow .12s,border-color .12s}
-.sw:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,44,55,.1)}
-.sw.pick{border-color:var(--cyan);box-shadow:0 0 0 2px var(--cyan)}
-.sw .dot{width:100%;height:52px;border-radius:8px;margin-bottom:7px;border:1px solid rgba(0,0,0,.08)}
-.sw .nm{font-size:11px;font-weight:600;line-height:1.25}
-.sw .cd{font-size:10px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
-.pk-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
-.pk-btn{border:none;border-radius:12px;padding:13px 22px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Montserrat',sans-serif}
-.pk-btn.solid{background:var(--cyan);color:var(--ink)}
-.pk-btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
 .cbanner{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:16px auto 0;max-width:920px}
 .cbanner .ct{flex:1}
 .cbanner button{background:none;border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:12px;font-weight:600;color:var(--cyan-ink);cursor:pointer;font-family:'Montserrat',sans-serif}
@@ -177,7 +159,7 @@ main#main{max-width:920px;margin:22px auto 0;padding:0 14px}
 #offer{display:none}
 @media print{
   body{background:#fff;padding:0;font-size:12px}
-  nav,.cfg-head,main,.totalbar,.picker,.cbanner{display:none!important}
+  nav,.cfg-head,main,.totalbar,.cbanner{display:none!important}
   #offer{display:block;padding:6mm 2mm;color:#000}
   #offer .obrand{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;border-bottom:3px solid #3EC9F0;padding-bottom:6px;margin-bottom:10px}
   #offer h1{font-size:20px;margin-bottom:2px}

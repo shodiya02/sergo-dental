@@ -12,32 +12,12 @@
   var cp = function (p) { return Math.round(p * K); };
   /* LINE_PAGE — опционально задаётся на странице перед подключением этого файла
      (const LINE_PAGE = 'имя-страницы-линейки.html';). Её наличие означает, что
-     выбор исполнения уже сделан на отдельной странице линейки: экран цвета
-     обивки пропускается, а в баннере и КП печатается полное имя исполнения
-     без обрезки суффикса "Continental". */
-  var LINE_MODE = (typeof LINE_PAGE !== 'undefined');
-  var displayName = LINE_MODE ? (MODEL.name || '') : (MODEL.name || '').replace(/\s+Continental$/, '');
+     страница относится к линейке с несколькими исполнениями: в баннере над
+     комплектацией появляется кнопка «Другое исполнение», ведущая на страницу
+     линейки. Отдельные позиции (кресла, тележки, рентген) её не объявляют —
+     у них баннер выводит только название, без кнопки. */
+  var displayName = MODEL.name || '';
 
-  var COLORS = {
-    standard: [
-      ['102','Atlantic Blue','#3E5A78'],['106','Mediterranean Blue','#2E6C86'],['113','Pacific Blue','#5B8FA8'],
-      ['136','Indian Blue','#33506B'],['132','Blueberry Violet','#4C4A6B'],['134','Japanese Wisteria','#6E5A86'],
-      ['135','Venetian Red','#7C2B2E'],['115','Scottish Salmon','#B96A5E'],['103','Nevada Yellow','#D6A64A'],
-      ['123','Polynesian Green','#3E6E57'],['101','Caribbean Green','#4E8C7A'],['137','Bright Silver','#C7CDD0'],
-      ['121','Anthracite Grey','#4A5157'],['130','Graphite Black','#25292C']
-    ],
-    memory: [
-      ['198','Atlantic Blue','#3E5A78'],['196','Mediterranean Blue','#2E6C86'],['183','Pacific Blue','#5B8FA8'],
-      ['186','Indian Blue','#33506B'],['192','Blueberry Violet','#4C4A6B'],['184','Japanese Wisteria','#6E5A86'],
-      ['194','Venetian Red','#7C2B2E'],['195','Scottish Salmon','#B96A5E'],['182','Nevada Yellow','#D6A64A'],
-      ['193','Polynesian Green','#3E6E57'],['197','Caribbean Green','#4E8C7A'],['187','Bright Silver','#C7CDD0'],
-      ['199','Anthracite Grey','#4A5157'],['180','Graphite Black','#25292C'],
-      ['142','Anatolian Hazelnut','#9A7B5E'],['141','Papyrus Beige','#C7B49A'],['143','Arabian Gold','#B8934A'],
-      ['140','Brazilian Brown','#6E4B36'],['144','Ruby Red','#8E2B39']
-    ]
-  };
-
-  var CHOSEN = { color: null, colorName: null };
   var state = [];
   var PH = (typeof PHOTOS !== 'undefined') ? PHOTOS : {};
 
@@ -168,41 +148,14 @@
     document.getElementById('pmodal').classList.add('show');
   };
 
-  /* ---------- экран выбора цвета ---------- */
-  function showColor() {
-    var grp = function (title, note, arr) {
-      return '<div class="cgroup-h">' + title + ' <span>' + note + '</span></div><div class="swgrid">' +
-        arr.map(function (c) {
-          return '<div class="sw ' + (CHOSEN.color === c[0] ? 'pick' : '') + '" ' +
-            'onclick="pickColor(\'' + c[0] + '\',\'' + c[1] + '\')">' +
-            '<div class="dot" style="background:' + c[2] + '"></div>' +
-            '<div class="nm">' + c[1] + '</div><div class="cd">' + c[0] + '</div></div>';
-        }).join('') + '</div>';
-    };
-    document.getElementById('colorArea').innerHTML =
-      grp('Стандартная обивка', '14 цветов', COLORS.standard) +
-      grp('Обивка Memory Foam', 'пена с эффектом памяти · 19 цветов', COLORS.memory);
-  }
-  window.pickColor = function (code, name) { CHOSEN.color = code; CHOSEN.colorName = name; showColor(); };
-  window.skipColor = function () { CHOSEN.color = null; CHOSEN.colorName = null; goConfig(); };
-  window.goColor = function () {
-    if (LINE_MODE) { location.href = LINE_PAGE; return; }
-    document.getElementById('screenColor').classList.remove('hidden');
-    document.getElementById('main').classList.add('hidden');
-    document.getElementById('cbannerWrap').innerHTML = '';
-    window.scrollTo(0, 0);
-  };
+  /* ---------- баннер линейки ---------- */
+  window.goColor = function () { location.href = LINE_PAGE; };
   window.goConfig = function () {
-    var sc = document.getElementById('screenColor');
-    if (sc) sc.classList.add('hidden');
     document.getElementById('main').classList.remove('hidden');
-    document.getElementById('cbannerWrap').innerHTML = LINE_MODE
+    document.getElementById('cbannerWrap').innerHTML = (typeof LINE_PAGE !== 'undefined')
       ? '<div class="cbanner"><div class="ct"><b>' + displayName + '</b></div>' +
         '<button onclick="goColor()">Другое исполнение</button></div>'
-      : '<div class="cbanner"><div class="ct"><b>' + displayName + '</b><br>' +
-        '<span style="font-size:12px;color:var(--muted)">' +
-        (CHOSEN.colorName ? 'Цвет обивки: ' + CHOSEN.colorName + ' (' + CHOSEN.color + ')' : 'Цвет обивки не выбран') +
-        '</span></div><button onclick="goColor()">Изменить</button></div>';
+      : '<div class="cbanner"><div class="ct"><b>' + displayName + '</b></div></div>';
     window.scrollTo(0, 0);
   };
 
@@ -227,8 +180,7 @@
     document.getElementById('offer').innerHTML =
       '<div class="obrand">Sergo Dental · официальный дистрибьютор Stern Weber</div>' +
       '<h1>Коммерческое предложение</h1>' +
-      '<div class="oh">Стоматологическая установка ' + displayName + ' (Cefla, Италия)' +
-      (CHOSEN.colorName ? ' · цвет обивки: ' + CHOSEN.colorName + ' (' + CHOSEN.color + ')' : '') + '<br>' +
+      '<div class="oh">Стоматологическая установка ' + displayName + ' (Cefla, Италия)<br>' +
       'Sergo Dental · Ташкент, Узбекистан · +998 (78) 888-11-10 · info@sergodental.com &nbsp;·&nbsp; дата: ' + today + '</div>' +
       '<table><tr><th>Наименование</th><th class="n">Артикул</th><th class="n">Кол-во</th>' +
       '<th class="n">Цена</th><th class="n">Сумма</th></tr>' + rows +
@@ -244,7 +196,7 @@
     document.getElementById('mdlSub').textContent = MODEL.sub || '';
     document.getElementById('btnReset').onclick = function () { buildState(); render(); };
     document.getElementById('btnOffer').onclick = makeOffer;
-    if (LINE_MODE) { goConfig(); } else { showColor(); }
+    goConfig();
     buildState();
     render();
   });
