@@ -158,7 +158,9 @@ var PHOTO_OVERRIDES = {
   // Только страница S380 TRC Continental Hybrid
   "s380-trc-continental-hybrid": [
     { k: ["установка s380 trc continental hybrid с сенсорным дисплеем"],
-      f: "assets/images/image_2026-08-25_13-43-38.png" }
+      f: "assets/images/image_2026-08-25_13-43-38.png" },
+    { k: ["универсальный столик ассистента на двухшарнирном плече, на 5 держателей"],
+      f: "assets/images/image_2026-08-15_17-36-58.png" }
   ],
 
   // Только линейка S380 TRC (все s380-trc-*)
