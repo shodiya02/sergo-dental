@@ -122,6 +122,16 @@ var PHOTO_OVERRIDES = {
       f: "assets/images/image_2026-08-18_17-13-20.png" }
   ],
 
+  // Только страница S280 TRC International
+  "s280-trc-international": [
+    { k: ["установка s280 trc international"],
+      f: "assets/images/image_2026-09-11_11-07-34.png" },
+    { k: ["подача тёплой воды в стакан"],
+      f: null },
+    { k: ["трансторакальный столик-поднос под 2 инструментальных подноса"],
+      f: null }
+  ],
+
   // Только линейка S300 (s300-continental, s300-international)
   "s300": [
     { k: ["столик ассистента на двухшарнирном плече, регулируемый по высоте, на 5"],
