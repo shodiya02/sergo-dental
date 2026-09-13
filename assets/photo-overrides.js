@@ -136,6 +136,8 @@ var PHOTO_OVERRIDES = {
   "s280-trc-international": [
     { k: ["установка s280 trc international"],
       f: "assets/images/image_2026-09-11_11-07-34.png" },
+    { k: ["установка s280 с дисплеем full touch multimedia 7"],
+      f: "assets/images/image_2026-09-13_16-35-41.png" },
     { k: ["подача тёплой воды в стакан"],
       f: null },
     { k: ["трансторакальный столик-поднос под 2 инструментальных подноса"],
@@ -176,10 +178,18 @@ var PHOTO_OVERRIDES = {
       f: "assets/images/image_2026-07-29_10-49-50.png" }
   ],
 
+  // Только страница S300 Continental
+  "s300-continental": [
+    { k: ["разъём midwest 6-канальный с фиброоптикой (турбина не входит)"],
+      f: "assets/images/image_2026-09-13_16-43-51.png" }
+  ],
+
   // Только страница S300 International
   "s300-international": [
     { k: ["трансторакальный столик-поднос под 2 стандартных инструментальных подноса"],
-      f: null }
+      f: null },
+    { k: ["разъём midwest 6-канальный с фиброоптикой (турбина не входит)"],
+      f: "assets/images/image_2026-09-13_16-43-51.png" }
   ],
 
   // Только линейка S200 (все s200-*)
