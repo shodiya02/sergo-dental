@@ -311,5 +311,21 @@ var PHOTO_OVERRIDES = {
   "s220tr-continental": [
     { k: ["установка s220 tr continental с сенсорным lcd-дисплеем"],
       f: "assets/images/image_2026-09-11_16-18-41.png" }
+  ],
+
+  // Только страница S220TR Continental Hybrid
+  "s220tr-continental-hybrid": [
+    { k: ["установка s220 tr continental hybrid с сенсорным lcd-дисплеем"],
+      f: "assets/images/image_2026-09-12_10-20-04.png" },
+    { k: ["универсальный столик ассистента на трёхшарнирном плече, на 5"],
+      f: "assets/images/image_2026-08-15_17-36-58.png" }
+  ],
+
+  // Только страница S220TR International
+  "s220tr-international": [
+    { k: ["установка s220 tr international с сенсорным lcd-дисплеем"],
+      f: "assets/images/image_2026-09-11_16-27-49.png" },
+    { k: ["дополнительный держатель подноса на столике ассистента"],
+      f: null }
   ]
 };
