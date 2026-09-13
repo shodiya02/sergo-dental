@@ -122,6 +122,16 @@ var PHOTO_OVERRIDES = {
       f: "assets/images/image_2026-08-18_17-13-20.png" }
   ],
 
+  // Только страница S280 TRC Continental Hybrid
+  "s280-trc-continental-hybrid": [
+    { k: ["установка s280 trc continental hybrid с дисплеем"],
+      f: "assets/images/image_2026-09-11_11-15-33.png" },
+    { k: ["подача тёплой воды в стакан"],
+      f: null },
+    { k: ["универсальный столик ассистента на двухшарнирном плече, на 5"],
+      f: "assets/images/image_2026-08-15_17-36-58.png" }
+  ],
+
   // Только страница S280 TRC International
   "s280-trc-international": [
     { k: ["установка s280 trc international"],
